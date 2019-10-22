@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 
 export default ({ data }) => (
   <Layout>
-    <p>Welcome to {data.site.siteMetadata.title}!</p>
+    <p>This is {data.site.siteMetadata.title}!</p>
   </Layout>
 )
 
