@@ -1,26 +1,12 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 export default () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            year
-            author {
-              name
-            }
-          }
-        }
-      }
-    `
-  )
+  const { year, author } = useSiteMetadata()
 
   return (
     <div className="footer-text">
-      &copy; {data.site.siteMetadata.year} {data.site.siteMetadata.author.name}
+      &copy; {year} {author.name}
     </div>
   )
 }
